@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
   
+    def show
+      @product = Product.find_by(id: params[:id])
+      @client_token = Braintree::ClientToken.generate
+    end
+
     def new
       @product = Product.new
     end

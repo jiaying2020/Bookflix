@@ -66,6 +66,8 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    braintree (2.104.1)
+      builder (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.34.0)
@@ -179,9 +181,6 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
     web-console (4.1.0)
@@ -210,6 +209,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap-sass
+  braintree (~> 2.61, >= 2.61.1)
   byebug
   capybara (>= 2.15)
   jbuilder (~> 2.7)
@@ -222,7 +222,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
-  turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
