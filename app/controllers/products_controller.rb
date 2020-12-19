@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    before_action :find_product, only: [:edit, :update, :destroy]
+    before_action :find_product, only: [:edit, :update, :destroy,  :checkout]
 
     def index
       @products = Product.all
@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   
     def show
       @product = Product.find_by(id: params[:id])
-      @client_token = Braintree::ClientToken.generate
     end
 
     def new
@@ -38,6 +37,8 @@ class ProductsController < ApplicationController
       @product.destroy
       redirect_to products_path, notice: "商品已刪除"
     end
+
+  
   
     private
     def find_product
@@ -48,5 +49,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :price)
     end
+
 
 end

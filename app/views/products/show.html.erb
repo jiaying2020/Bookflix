@@ -18,18 +18,10 @@
 <%= link_to 'Back', products_path, class:'btn btn-default' %>
 <hr />
 
-<%= form_for(@product, url: checkout_product_path(@product), method: :post) do |f| %>
+<%= form_for(@product, url: mpg_products_path(@product), method: :post) do |f| %>
+
   <div id="payment-form"></div>
   <%= f.submit "確認付款", class:"btn btn-default btn-danger" %>
 <% end %>
 
-<script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
 
-<script>
-
-var clientToken = "<%= @client_token %>";
-
-braintree.setup(clientToken, "dropin", {
-  container: "payment-form"
-});
-</script>
